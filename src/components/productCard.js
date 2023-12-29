@@ -11,6 +11,7 @@ const ProductCard = ({
 	accent_color,
 	id,
 	top_sale,
+	whatsappMessage,
 }) => {
 	return (
 		<Link className="block" to={`/products/${id}`}>
@@ -38,7 +39,7 @@ const ProductCard = ({
 					<span className="block tracking-tight mb-2 font-robotoThin text-sm">
 						{description}
 					</span>
-					<div className="mt-2">	
+					<div className="mt-2">
 						{top_sale && (
 							<Tag
 								bgColor={accent_color}
@@ -48,20 +49,22 @@ const ProductCard = ({
 						)}
 					</div>
 					<span
-						className="block font-semibold text-lg font-lato"
+						className="block font-semibold text-lg font-lato py-3 "
 						style={{ color: accent_color }}
 					>
 						${price}
 					</span>
 				</p>
 
-				<Link
-					to={'/contact-us'}
+				<button
+					onClick={() =>
+						(window.location.href = `https://wa.me/96181448272?text=${whatsappMessage}`)
+					}
 					className=" block mt-auto py-3 text-center font-semibold tracking-wider text-white"
 					style={{ backgroundColor: accent_color }}
 				>
 					Buy Now!
-				</Link>
+				</button>
 			</div>
 		</Link>
 	);

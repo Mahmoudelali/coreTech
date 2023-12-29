@@ -13,13 +13,14 @@ function App() {
 			<Routes>
 				<Route element={<Layout />}>
 					<Route path="/" element={<Home />} />
+					<Route path="*" element={<Home />} />
 					<Route path="/products/:id" element={<Product />} />
 					<Route path="/products" element={<Products />} />
 					<Route path="/contact-us" element={<Contact />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
-	);	
+	);
 }
 
 export default App;

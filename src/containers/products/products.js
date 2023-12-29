@@ -2,6 +2,17 @@ import React from 'react';
 import { data } from '../../data';
 import ProductCard from '../../components/productCard';
 
+// Space: To add space in the text you want to create, use %20. For example, you want to write ‘Hi how are you?’, It will be ‘Hi%20how%20are20you?’.
+// Change line: To replace lines in the text that you created, use %0A. Suppose you want to write it like this
+
+const whatsappMessage = (productName, productId) => {
+	var customMessage = `Hi  , I am interested to order ${productName} Thank you ${productId}`;
+	var newText;
+
+	newText = customMessage.replaceAll(' ', '%20');
+
+	return newText;
+};
 const Products = () => {
 	const products = data.products;
 
@@ -35,6 +46,8 @@ const Products = () => {
 						index,
 					) => (
 						<ProductCard
+							whatsappMessage={whatsappMessage(title, id)}
+							// sendMessageHandler={sendWhatsappMessge}
 							top_sale={top_sale}
 							key={index}
 							id={id}

@@ -73,7 +73,7 @@ const Home = () => {
 					title="Kieslect Calling Watch Ks pro"
 					width="640"
 					height="360"
-					src="https://www.youtube.com/embed/u4AxqUJGK_4?autoplay=1&mute=1&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fwww.kieslect.com&widgetid=1&controls=0"
+					src="https://www.youtube.com/embed/qFYfWfL_f88?si=5WV28SqXW907tZhj?v=qFYfWfL_f88&autoplay=1&mute=1&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fwww.kieslect.com&widgetid=1&controls=0"
 					id="widget2"
 					data-gtm-yt-inspected-6="true"
 					style={{ width: '100%', height: '200px' }}
@@ -126,25 +126,6 @@ const Home = () => {
 					onTitleClick="/products"
 					cardsList={products}
 				/>
-			</section>
-
-			<section className=" fixed top-[40%] -translate-y-1/2 right-2  z-50 ">
-				{data.sideLinks.map(({ icon, name, url, bgcolor }, index) => {
-					return (
-						<div
-							key={index}
-							className="w-7 h-7 mb-3 p-1 rounded-md flex items-center justify-center"
-							style={{ backgroundColor: bgcolor }}
-						>
-							<a
-								href={url}
-								className="text-center block text-white text-xl"
-							>
-								{icon}
-							</a>
-						</div>
-					);
-				})}
 			</section>
 		</div>
 	);

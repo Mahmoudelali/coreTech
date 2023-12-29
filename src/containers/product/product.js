@@ -4,6 +4,7 @@ import { data } from '../../data';
 import { GiCheckMark } from 'react-icons/gi';
 import Tag from '../../components/tag';
 import FeaturesMenu from '../../components/featuresMenu';
+import { calculateSave } from '../../helpers.js';
 
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { IoChevronForwardOutline } from 'react-icons/io5';
@@ -89,22 +90,43 @@ const Product = () => {
 					title={'#top_selling'}
 				/>
 			)}
-			<p
-				className={`mt-4 first-letter:text-xl first-letter:text-${product.accent_color} text-center w-[90%]  mx-auto`}
+
+			<div
+				className={`mt-4 text-center w-[90%] text-gray-900 font-robotoThin font-extrabold tracking-[3px] my-8`}
 			>
-				{product.description}
-			</p>
+				<h2 className="text-left text-4xl mb-1">{product.title}</h2>
+				<p className="text-left flex items-center gap-3">
+					<span className="text-md text-2xl line-through tracking-wider italic">
+						${product.price_before}
+					</span>
+					<span>-</span>
+					<span className="text-md text-2xl text-accent tracking-wider italic">
+						${product.price_after}
+					</span>
+					<span
+						className="px-3 py-1  text-[10px] font-lato font-bold  rounded-3xl text-white "
+						style={{ backgroundColor: product.accent_color }}
+					>
+						save{' '}
+						{calculateSave(
+							product.price_before,
+							product.price_after,
+						)}
+						%
+					</span>
+				</p>
+			</div>
 			<h1 className="text-2xl mb-2 text-[#d50e25] font-extrabold tracking-wider font-lato">
 				Specifications
 			</h1>
 			<div className="mt-4 mb-4">
 				{product.specifications.map((spec, index) => (
 					<article
-						className="flex items-center gap-3 mb-1"
+						className="flex items-center gap-3 mb-2"
 						key={index}
 					>
 						<GiCheckMark color="#25d366" className="self-middle" />
-						<span className="font-lato font-semibold tracking tracking-wider">
+						<span className="font-lato font-semibold tracking tracking-wider text-sm">
 							{spec}
 						</span>
 					</article>
@@ -131,8 +153,9 @@ const Product = () => {
 				<h3 className="text-2xl mb-2 text-[#d50e25] font-extrabold tracking-wider font-lato">
 					Available colors
 				</h3>
-				{product.colors.map((clr) => (
+				{product.colors.map((clr, index) => (
 					<span
+						key={index}
 						className="h-6 w-6 inline-block rounded-full mr-2"
 						style={{ backgroundColor: clr }}
 					/>
