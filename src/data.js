@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 import { IoIosBluetooth } from 'react-icons/io';
 import { IoIosWifi } from 'react-icons/io';
 import { IoCameraOutline } from 'react-icons/io5';
@@ -7,6 +9,7 @@ import { IoHeartOutline } from 'react-icons/io5';
 import { IoHardwareChipOutline } from 'react-icons/io5';
 import { TbPlayerPlay } from 'react-icons/tb';
 import { PiPersonSimpleRun } from 'react-icons/pi';
+
 import { RxSpeakerLoud } from 'react-icons/rx';
 
 //home
@@ -196,7 +199,7 @@ export const data = {
 			accent_color: '#f44336',
 			top_sale: false,
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, fugiat optio! Veritatis impedit iusto ea temporibus? Dolore sint at modi!',
+				'Featuring a vibrant 2.01" FHD AMOLED display, a powerful dual-core processor with triple-speed capabilities, and a cutting-edge 2.5D GPU for a super dynamic visual experience',
 			specifications: [
 				'2.01" FHD AMOLED Display',
 				'Dual Core, Triple Speed',
@@ -212,7 +215,7 @@ export const data = {
 				'Editable Dynamic Watch Faces',
 			],
 			features: [{ title: '', featureList: [''] }],
-			colors: ['black', 'blue'],
+			colors: ['blue'],
 			screen: '',
 			battery: '',
 			battery_life: '',
@@ -232,7 +235,7 @@ export const data = {
 			accent_color: '#2596be',
 			top_sale: true,
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, fugiat optio! Veritatis impedit iusto ea temporibus? Dolore sint at modi!',
+				'Equipped with a crisp 1.43" FHD AMOLED display, a high-performance dual-core processor with triple-speed capability, and enhanced security through an advanced biometric sensor.',
 			imagesList: [kr2_1, kr2_2, kr2_3, kr2_4, kr2_5, kr2_6],
 			specifications: [
 				'Dual Core, Triple Speed',
@@ -246,7 +249,7 @@ export const data = {
 				'1.43" FHD AMOLED Display with AOD',
 				'Editable Dynamic Watch Faces',
 			],
-			colors: ['black', 'blue'],
+			colors: ['gold', '#02ccfe'],
 			screen: '',
 			battery: '',
 			battery_life: '',
@@ -267,7 +270,7 @@ export const data = {
 			accent_color: '#ffb42e',
 			top_sale: true,
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, fugiat optio! Veritatis impedit iusto ea temporibus? Dolore sint at modi!',
+				'Featuring a spacious 2.01" super-large AMOLED screen, powered by the efficient Kieslect OS, and equipped with an advanced abnormal heart rate alert for enhanced health monitoring.',
 			specifications: [
 				'2.01" Super Large Amoled Display',
 				'Powered by Kieslect OS',
@@ -281,7 +284,7 @@ export const data = {
 				'Find My Phone/Watch',
 				'Smart Notification',
 			],
-			colors: ['black', 'blue'],
+			colors: ['gold', 'orange'],
 			screen: '',
 			battery: '',
 			battery_life: '',
@@ -292,7 +295,7 @@ export const data = {
 			],
 		},
 		{
-			id: 'Kieslect Lora 2',
+			id: 'Kieslect-Lora-2',
 			title: 'Kieslect Lora2',
 			image: 'https://i0.wp.com/www.kieslect.com/wp-content/uploads/2023/06/kieslect-lora-2-smartwatch.jpg?fit=1000%2C871&ssl=1',
 			specsList: lora_specs,
@@ -302,8 +305,7 @@ export const data = {
 			accent_color: '#800080',
 			top_sale: false,
 			imagesList: [lora2, lora3, lora4, lora5, lora6, lora1],
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, fugiat optio! Veritatis impedit iusto ea temporibus? Dolore sint at modi!',
+			description: `Boasting a sleek 1.3" ultra AMOLED display, comprehensive 24-hour women's health management features, and seamless and stable Bluetooth calling for an enhanced communication experience`,
 			specifications: [
 				'Ultra-thin Lightweight',
 				'Fashion Luxury Design',
@@ -312,7 +314,7 @@ export const data = {
 				'Hifi Definition Music Player',
 				'For both Android and iOS',
 			],
-			colors: ['black', 'blue'],
+			colors: ['#ffd700', '#800080', '#ffc0cb'],
 			screen: '',
 			battery: '',
 			battery_life: '',
@@ -339,8 +341,7 @@ export const data = {
 			price_after: 35,
 			accent_color: '#00c851',
 			top_sale: true,
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, fugiat optio! Veritatis impedit iusto ea temporibus? Dolore sint at modi!',
+			description: `Featuring a vibrant 1.78" HD colorful AMOLED display, an advanced abnormal heart rate warning system, and effortlessly accessible 24-hour health management for a seamless and proactive well-being experience.`,
 			specifications: [
 				'Clear & Stable Bluetooth Calls',
 				'Abnormal Heart Rate Warning',
@@ -349,8 +350,8 @@ export const data = {
 				'Dynamic UI',
 				'For both Android and iOS',
 			],
-			colors: ['black', 'blue'],
 			screen: '',
+			colors: ['#000'],
 			battery: '',
 			battery_life: '',
 			support_wpcall: true,
@@ -369,8 +370,7 @@ export const data = {
 			price_after: 58,
 			accent_color: '#637aa4',
 			top_sale: true,
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, fugiat optio! Veritatis impedit iusto ea temporibus? Dolore sint at modi!',
+			description: `Showcasing a stunning 1.43" ultra FHD AMOLED display with an always-on feature, complemented by a double straps design for a stylish and functional wearable experience.`,
 			specifications: [
 				'Stable Bluetooth Calls',
 				'1.43" Ultra FHD AMOLED Display',
@@ -383,7 +383,7 @@ export const data = {
 				'70 Sports Modes',
 				'For both Android and iOS',
 			],
-			colors: ['black', 'blue'],
+			colors: ['#000', 'orange', '#1f2c4d'],
 			screen: '',
 			battery: '',
 			battery_life: '',
@@ -445,15 +445,24 @@ export const data = {
 		},
 		{
 			name: 'Whatsapp',
-			url: 'https://wa.me/96181448272',
+			url: `https://wa.me/${process.env.REACT_APP_ADMIN_NUMBER}`,
 			icon: <IoLogoWhatsapp />,
 			bgcolor: '#25d366',
 		},
 		{
 			name: 'Share',
 			url: '',
+			onClick: () => {
+				Swal.fire({
+					title: 'CoreTech website URL copied to clipboard!',
+					text: 'Share with your friends ❤',
+					icon: 'success',
+				});
+				navigator.clipboard.writeText(process.env.REACT_APP_SERVER_URL);
+			},
 			icon: <FiShare2 />,
 			bgcolor: '#48494B',
 		},
 	],
 };
+	

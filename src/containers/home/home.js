@@ -4,6 +4,7 @@ import { data } from '../../data';
 import Scrollable from '../../components/scrollable';
 import DescriptionCard from '../../components/descriptionCard';
 import heroImage from '../../assets/images/Ins_1738263851.jpg';
+// import watchesPoster from '../../assets/images/Kieslect-Watch-Ks2-1-En3013.png';
 
 const Home = () => {
 	const [height, setHeight] = useState('540px');
@@ -113,7 +114,10 @@ const Home = () => {
 			</section>
 			<section>
 				<section className="my-14">
-					<div className='bg-[url("//www.kieslect.com/wp-content/uploads/2023/11/Kieslect-Watch-Ks2-1-En3013.png")] h-[200px]  bg-contain bg-no-repeat' />
+					<div
+						className=" h-[200px]  bg-contain bg-no-repeat"
+						// style={{ backgroundImage: watchesPoster }}
+					/>
 					<h2 className="font-lato text-center font-semibold mt-2">
 						An easy way to live a Healthier Life!
 					</h2>
@@ -121,11 +125,13 @@ const Home = () => {
 						24/7 health monitoring
 					</span>
 				</section>
-				<Scrollable
-					title={data.scrollableArea.title}
-					onTitleClick="/products"
-					cardsList={products}
-				/>
+				<section className="px-4">
+					<Scrollable
+						title={data.scrollableArea.title}
+						onTitleClick="/products"
+						cardsList={products}
+					/>
+				</section>
 			</section>
 		</div>
 	);

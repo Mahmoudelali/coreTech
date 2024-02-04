@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { heroImage } from '../assets/images/heroImage.png';
 import Tag from './tag';
 
 const ProductCard = ({
+	orderEvent,
 	name,
 	description,
 	image,
@@ -11,7 +11,6 @@ const ProductCard = ({
 	accent_color,
 	id,
 	top_sale,
-	whatsappMessage,
 }) => {
 	return (
 		<Link className="block" to={`/products/${id}`}>
@@ -57,9 +56,7 @@ const ProductCard = ({
 				</p>
 
 				<button
-					onClick={() =>
-						(window.location.href = `https://wa.me/96181448272?text=${whatsappMessage}`)
-					}
+					onClick={orderEvent}
 					className=" block mt-auto py-3 text-center font-semibold tracking-wider text-white"
 					style={{ backgroundColor: accent_color }}
 				>

@@ -1,24 +1,17 @@
 import React from 'react';
 import { data } from '../../data';
 import ProductCard from '../../components/productCard';
+import { orderProduct, whatsappMessage } from '../../helpers';
 
 // Space: To add space in the text you want to create, use %20. For example, you want to write ‘Hi how are you?’, It will be ‘Hi%20how%20are20you?’.
 // Change line: To replace lines in the text that you created, use %0A. Suppose you want to write it like this
 
-const whatsappMessage = (productName, productId) => {
-	var customMessage = `Hi  , I am interested to order ${productName} Thank you ${productId}`;
-	var newText;
-
-	newText = customMessage.replaceAll(' ', '%20');
-
-	return newText;
-};
 const Products = () => {
 	const products = data.products;
 
 	return (
 		<div className="pt-[64px]">
-			<div className='relative h-[200px] bg-[url("https://i0.wp.com/www.kieslect.com/wp-content/uploads/2023/06/kieslect-smartwatch-3-1.jpg?fit=2408%2C912&ssl=1")] bg-cover bg-no-repeat bg-bottom'>
+			<div className='relative h-[200px] bg-[url("https://i0.wp.com/www.kieslect.com/wp-content/uploads/2023/06/kieslect-smartwatch-3-1.jpg?fit=2408%2C912&ssl=1")] bg-cover bg-no-repeat bg-bottom texts'>
 				<div
 					className="absolue w-full h-full z-10 flex justify-center items-end "
 					style={{ backgroundColor: '#00090' }}
@@ -46,8 +39,9 @@ const Products = () => {
 						index,
 					) => (
 						<ProductCard
-							whatsappMessage={whatsappMessage(title, id)}
-							// sendMessageHandler={sendWhatsappMessge}
+							orderEvent={() =>
+								orderProduct(whatsappMessage(title, id))
+							}
 							top_sale={top_sale}
 							key={index}
 							id={id}

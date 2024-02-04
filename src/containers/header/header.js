@@ -13,11 +13,10 @@ const Header = () => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			const currentScrollPos = window.pageYOffset;
-			setVisible(
-				prevScrollPos > currentScrollPos || currentScrollPos < 10,
-			);
+			const currentScrollPos = window.scrollY;
 			setPrevScrollPos(currentScrollPos);
+			setVisible(prevScrollPos > currentScrollPos);
+			if (currentScrollPos == 0) setVisible(true);
 		};
 
 		window.addEventListener('scroll', handleScroll);
@@ -37,8 +36,14 @@ const Header = () => {
 	}, [window.innerHeight]);
 
 	return (
-		<div className={`main-header ${visible ? '' : 'hidden'}`}>
-			<header className="h-16 w-screen bg-white flex justify-center items-center px-3 shadow-md fixed top-0 left-0 z-40 overflow-x-hidden">
+		<div className={`main-header duration-700 transition-all `}>
+			<header
+				className="h-16 w-screen bg-white flex justify-center items-center px-3 shadow-md fixed top-0 left-0 z-40 overflow-x-hidden"
+				style={{
+					transition: '.5s',
+					transform: visible ? '' : ' translateY(-100%)',
+				}}
+			>
 				<Link
 					to="/"
 					className="text-black  font-extrabold uppercase  font-blackops tracking-widest"
@@ -47,7 +52,11 @@ const Header = () => {
 				</Link>
 			</header>
 			<footer
-				style={{ top: `${safeArea - 60}px` }}
+				style={{
+					top: `${safeArea - 60}px`,
+					transition: '.5s',
+					transform: visible ? '' : ' translateY(100%)',
+				}}
 				className={` bg-white  text-accent h-[60px] w-screen fixed top-[90vh] left-0 flex items-center justify-center p-2 shadow-md z-30 transition-all duration-500 gap-x-6 border-t`}
 			>
 				{data.linksArray.map(
@@ -57,6 +66,7 @@ const Header = () => {
 							key={index}
 							to={to}
 							onClick={() => {
+								window.scrollTo(0, 0);
 								setActive(text);
 							}}
 						>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { data } from '../../data';
+import { copyProductUrlToClipboard, copyUrlToClipboard } from '../../helpers';
 
 const Footer = () => {
 	return (
@@ -11,10 +12,19 @@ const Footer = () => {
 
 				<div className="flex  justify-center gap-3  mb-2">
 					{data.sideLinks.map((link, index) => {
-						return (
+						return link.url == '' ? (
+							<button
+								key={index}
+								onClick={() => copyUrlToClipboard()}
+								className="border border-white rounded-full w-9 h-9 text-xl flex justify-center items-center"
+							>
+								{link.icon}
+							</button>
+						) : (
 							<a
 								key={index}
 								href={link.url}
+								target="_blank"
 								className="border border-white rounded-full w-9 h-9 text-xl flex justify-center items-center"
 							>
 								{link.icon}

@@ -7,6 +7,9 @@
 	border-radius: 0% 100% 0% 100% / 87% 0% 100% 13%;
 }
 
+html {
+	scroll-behavior: smooth !important;
+}
 /* #hero-section::before { 
 	position: absolute;
 	inset: 0;
@@ -85,6 +88,6 @@ code {
 	}
 
 	100% {
-		transform: translateX(0)
+		transform: translateX(0);
 	}
 }
